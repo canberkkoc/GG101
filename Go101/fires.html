@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ (index . 0).Cities.Name }}</title>
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: left;
+    }
+    </style>
+</head>
+<body>
+
+    <table style="width:100%">
+        <caption>{{ (index . 0).Cities.Name }} Yangın Durumu</caption>
+        <tr>
+            <th>İlçe</th>
+            <th>Başlama Saati</th>
+            <th>Durumu</th>
+            <th>Risk Seviyesi</th>
+            <th>Nedeni</th>
+            <th>Harita Linki</th>
+        </tr>
+        {{range .}}
+        <tr>
+            <td>{{ .District}}</td>
+            <td>{{ .Time}}</td>
+            <td>{{ .Status}}</td>
+            <td>{{ .RiskLevel}}</td>
+            <td>{{ .Cause}}</td>
+            <td><a href="https://www.google.com/maps/place/{{.Locationy}},{{.Locationy}}">Haritaya Git</a></td>
+        </tr>
+        {{end}}
+    </table>
+
+</body>
+</html>

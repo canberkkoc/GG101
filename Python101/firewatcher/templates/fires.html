@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{city.name}}</title>
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: left;
+    }
+    </style>
+</head>
+<body>
+
+    <table style="width:100%">
+        <caption>{{city.name}} Yangın Durumu</caption>
+        <tr>
+            <th>İlçe</th>
+            <th>Başlama Saati</th>
+            <th>Durumu</th>
+            <th>Risk Seviyesi</th>
+            <th>Nedeni</th>
+            <th>Harita Linki</th>
+        </tr>
+        {% for item in fires %}
+        <tr>
+            <td>{{ item.district}}</td>
+            <td>{{ item.time}}</td>
+            <td>{{ item.status}}</td>
+            <td>{{ item.risk_level}}</td>
+            <td>{{ item.cause}}</td>
+            <td><a href="https://www.google.com/maps/place/{{item.locationy}},{{item.locationx}}">Haritaya Git</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

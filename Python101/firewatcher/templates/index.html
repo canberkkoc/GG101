@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Şehir Listesi</title>
+</head>
+<body>
+{% if cities|length > 1 %}
+    {% for item in cities %}
+    <li><a href={{ url_for('fires', city_id=item.id) }}>{{ item.name }}</a></li>
+    {% endfor %}
+{% else %}
+     <h>Oops there is something wrong {{cities[0]}}</h>
+{% endif %}
+</ul>
+</body>
+</html>
