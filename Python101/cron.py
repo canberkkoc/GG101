@@ -52,6 +52,5 @@ if __name__ == "__main__":
                 else:
                     db.session.add(fire)
             db.session.commit()
-        print("CHECK")
         time.sleep(600)
 
