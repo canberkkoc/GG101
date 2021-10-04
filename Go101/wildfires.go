@@ -46,6 +46,7 @@ func GetWildfires(c echo.Context) error {
 	return c.Render(http.StatusOK, "fires.html", wildfires)
 }
 
+//  func GetWildfiresFromDb(Id string) (interface{}, error) can used like this 
 func GetWildfiresFromDb(Id string) ([]dbutils.Wildfires, error) {
 	db := dbutils.GetDBInstance()
 	fmt.Println(Id)
