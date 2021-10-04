@@ -64,7 +64,7 @@ func main() {
 
 	dbutils.NewDB()
 	t := &TemplateRenderer{
-		templates: template.Must(template.ParseGlob("*.html")),
+		templates: template.Must(template.ParseGlob("templates/*.html")),
 	}
 	e.Renderer = t
 	e.GET("/", GetCities)
