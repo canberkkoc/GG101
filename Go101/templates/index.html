@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Şehir Listesi</title>
+</head>
+<body>
+{{range . }}
+    <li><a href=/city/{{.Id}}>{{ .Name}}</a></li>
+{{end}}
+</ul>
+</body>
+</html>
